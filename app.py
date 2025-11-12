@@ -18,4 +18,7 @@ def check_license():
         return jsonify({"status": "error", "msg": "Invalid license ❌"})
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=10000)
+    import os
+port = int(os.environ.get("PORT", 10000))
+app.run(host="0.0.0.0", port=port)
+
